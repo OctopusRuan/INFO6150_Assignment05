@@ -197,7 +197,7 @@
 	</section>
 
 	<!--Membership-->
-	<section class="container my-5">
+	<section id="meal-planner" class="container my-5">
 		<h2 class="text-center">🥗 Personalized Meal Plans</h2>
 		<p class="text-center">Choose a plan that fits your health goals!</p>
 		<div class="table-responsive">
@@ -229,7 +229,7 @@
 			</table>
 		</div>
 	</section>
-
+	
 
 	<!--User Evaluation-->
 	<section class="container my-5">
@@ -311,6 +311,21 @@
 		function scrollToTop() {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		}
+		
+	</script>
+	<script>
+		$(document).ready(function () {
+			$(".nav-link").click(function (event) {
+				var sectionId = $(this).attr("data-section");
+				if (sectionId === "analysis") {
+					event.preventDefault();
+					document.getElementById("ingredient-analysis").scrollIntoView({ behavior: 'smooth' });
+				} else if (sectionId === "planner") {
+					event.preventDefault();
+					document.getElementById("meal-planner").scrollIntoView({ behavior: 'smooth' });
+				}
+			});
+		});
 	</script>
 
 
